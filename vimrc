@@ -116,6 +116,21 @@ let g:go_highlight_generate_tags = 1
 nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
+augroup cpp
+  autocmd!
+
+  " Show by default 4 spaces for a tab
+  autocmd BufNewFile,BufRead *.cpp setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd BufNewFile,BufRead *.h setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
+
+augroup c
+  autocmd!
+
+  " Show by default 4 spaces for a tab
+  autocmd BufNewFile,BufRead *.c setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd BufNewFile,BufRead *.h setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
 
 augroup go
   autocmd!
