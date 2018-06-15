@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# Scripts that sync local files to QINIU Cloud.
+#
+# @version 1.0 2018-06-15
+
 
 ####################### SETUP PARAMETERS
 [ -z "$QINIU_SYNC_CONFIG" ] && QINIU_SYNC_CONFIG="$HOME/.qshell/upload.json"
@@ -62,7 +67,7 @@ sync_files() {
 
 ####################### MAIN()
 
-variable_set "$HOME"
+variable_set       "$HOME"
 program_must_exist "qshell"
 
 sync_files "$QINIU_SYNC_CONFIG"
