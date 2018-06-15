@@ -4,8 +4,8 @@
 alias cppcompile="c++ -std=c++11 -stdlib=libc++"
 
 # Use sublime-text for editing config files
-alias zshconfig="subl ~/.zshrc"
-alias envconfig="subl ~/.bin/env.sh"
+alias zshconfig="subl $HOME/.zshrc"
+alias envconfig="subl $HOME/.bin/env.sh"
 
 # Python environment
 eval "$(pyenv init -)"
