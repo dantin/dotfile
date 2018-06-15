@@ -1,2 +1,3 @@
 # dotfile
-dotfile stuff
+
+dotfile stuff with some scripts
