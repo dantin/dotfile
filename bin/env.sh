@@ -29,3 +29,6 @@ alias gradle="JAVA_HOME=`/usr/libexec/java_home -v 1.8` gradle"
 #
 # Customized PATH
 export PATH="$HOME/.bin/:$PATH"
+
+# Rust-lang
+export PATH="$HOME/.cargo/bin:$PATH"
