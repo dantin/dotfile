@@ -8,6 +8,7 @@ alias zshconfig="subl $HOME/.zshrc"
 alias envconfig="subl $HOME/.bin/env.sh"
 
 # Python environment
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
