@@ -80,7 +80,8 @@ setup_route() {
         "o365, 10.69.144.92, 255.255.252.0, 10.189.172.1" \
         "jira, 3.239.244.206, 255.255.252.0, 10.189.172.1" \
         "printer, 10.166.248.171, 255.255.252.0, 10.189.172.1" \
-        "nuc, 10.189.252.88, 255.255.254.0, 10.189.172.1")
+        "nuc, 10.189.155.75, 255.255.254.0, 10.189.172.1" \
+        "ccm, 10.189.140.34, 255.255.254.0, 10.189.172.1")
 
     msg "Setup route table."
 
@@ -103,7 +104,8 @@ reset_route() {
         "o365, 10.69.144/22" \
         "github, 10.152.32/22" \
         "printer, 10.166.248/22" \
-        "nuc, 10.189.252/23")
+        "nuc, 10.189.154/23" \
+        "ccm, 10.189.140/23")
 
     msg "Reset route table."
 
@@ -142,7 +144,7 @@ case "$1" in
         show_route
         ;;
     *)
-        error "You must define [set|reset] as command line parameter."
+        error "You must define [set|show|reset] as command line parameter."
         ;;
 esac
 
