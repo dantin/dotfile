@@ -35,7 +35,6 @@ export PATH="$HOME/.bin/:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Golang
-#export GOROOT=/usr/local/Cellar/go/1.10.2/libexec
 export GOROOT=/usr/local/Cellar/go/1.11.1/libexec
 export GOPATH=$HOME/Documents/code/golang
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
