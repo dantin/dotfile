@@ -2,5 +2,6 @@
 " A (not so) minimal vimrc.
 "
 set runtimepath+=~/.vim
-source ~/.vim/vimrcs/basic.vim
-source ~/.vim/vimrcs/plugins.vim
+for f in split(glob('~/.vim/vimrcs/*.vim'), '\n')
+    exec 'source' f
+endfor
