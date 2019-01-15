@@ -1,13 +1,6 @@
-" customized vim setting
 "
-set runtimepath+=~/.vim_runtime
-
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
-
-try
-source ~/.vim_runtime/customized_configs.vim
-catch
-endtry
+" A (not so) minimal vimrc.
+"
+set runtimepath+=~/.vim
+source ~/.vim/vimrcs/basic.vim
+source ~/.vim/vimrcs/plugins.vim
