@@ -16,17 +16,20 @@ This repository contains:
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
-- [Related Efforts](#related-effort)
+- [Related Efforts](#related-efforts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Background
 
-I found it is boring and time consuming to setup development environment on different machines, e.g. MacOS, CentOS,
-etc. So I create this project as a helper to accelerate the whole process.
+I found it is boring and time consuming while setting up development environment on different machines, e.g.
+MacOS, CentOS, etc.
 
-> DRY: Don't Repeat Yourself. It's not only repetitive, it's redundant, and people have heard it before.
+Inspired by the __DRY__ principle, I create this project as a scaffold to accelerate the process.
+
+> DRY: Don't Repeat Yourself.
+
 
 ## Install
 
@@ -65,4 +68,4 @@ Free free to [Open an issue](https://github.com/dantin/dotfile/issues/new) or su
 
 ## License
 
-[BSD 3 Clause](LICENSE) @ David Ding
+[BSD 3 Clause](LICENSE) © David Ding
