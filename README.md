@@ -1,5 +1,7 @@
 # Dantin's dotfile
 
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+
 The dotfile is a personal project which is aimed to simpilify the setup process of a development environemnt.
 
 This repository contains:
@@ -21,3 +23,46 @@ This repository contains:
 
 ## Background
 
+I found it is boring and time consuming to setup development environment on different machines, e.g. MacOS, CentOS,
+etc. So I create this project as a helper to accelerate the whole process.
+
+> DRY: Don't Repeat Yourself. It's not only repetitive, it's redundant, and people have heard it before.
+
+## Install
+
+__Warning:__ If you want to give these dotfiles a try, you should first fork this repository, review the code, and
+remove things you don't want or need. Don't blindly use my settings unless you know what that entails. Use at your
+own risk!
+
+### Using Git and bootstrap script
+
+You can clone the repository wherever you want. (I like to keep it in `~/Documents/code/dotfile`.) The bootstrapper
+script will pull in the latest version and copy the files to your home folder.
+
+    git clone https://github.com/dantin/dotfile.git && cd dotfile && source bootstrap.sh
+
+To update, `cd` into your local `dotfile` repository and then:
+
+    source bootstrap.sh
+
+## Usage
+
+This is only a documentation page. You can find out more on [specification](SPEC.md).
+
+## Related Efforts
+
+- [vimrc](https://github.com/dantin/vim-config) - Vimrc configuration.
+
+## Maintainers
+
+[@dantin](https://github.com/dantin)
+
+## Contributing
+
+Suggestions and improvements welcome!
+
+Free free to [Open an issue](https://github.com/dantin/dotfile/issues/new) or submit PRs.
+
+## License
+
+[BSD 3 Clause](LICENSE) @ David Ding
