@@ -7,9 +7,8 @@ The dotfile is a personal project which is aimed to simpilify the setup process 
 This repository contains:
 
 1. The scripts used in everyday life.
-2. VIM configuration file.
-3. Tmux configuration file.
-4. AutoHotkey script used on Windows box.
+2. Tmux configuration file.
+3. AutoHotkey script used on Windows box.
 
 ## Table of Contents
 
@@ -54,7 +53,8 @@ This is only a documentation page. You can find out more on [specification](SPEC
 
 ## Related Efforts
 
-- [vimrc](https://github.com/dantin/vim-config) - Vimrc configuration.
+- [environment-setup](https://github.com/dantin/environment-setup) - An Ansible playbooks that setup Linux box.
+- [vim-config](https://github.com/dantin/vim-config) - A personal configuration of Vim.
 
 ## Maintainers
 
