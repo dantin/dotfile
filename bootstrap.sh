@@ -1,22 +1,33 @@
 #!/usr/bin/env bash
 
-set_symbolic_links() {
-    local symbolic_link_table=(               \
-        "vimrc, vimrc, .vimrc"                \
-        "vim configuration, vim-config, .vim" \
-        "tmux, dotfile/tmux.conf, .tmux.conf")
+cd $(dirname "${BASH_SOURCE[0]}")
+BASE_PATH="$(pwd)"
 
-    for i in "${!symbolic_link_table[@]}"; do
-        IFS=', ' read -r -a entry <<< "${symbolic_link_table[i]}"
-        echo " Set for ${entry[0]}"
-        echo "${entry[1]}" \
-             "${entry[2]}"
-    done
-
+msg() {
+    printf '%b\n' "$1" >&2
 }
 
-set_symbolic_links
-#cd $HOME
-#ln -s documents/code/dotfile/vimrc .vimrc
-#ln -s documents/code/vim-config/ .vim
-#ln -s documents/code/dotfile/tmux.conf .tmux.conf
+success() {
+    if [ "$ret" -eq '0'  ]; then
+        msg "\33[32m[✔]\33[0m ${1}${2}"
+    fi
+}
+
+error() {
+    msg "\33[31m[✘]\33[0m ${1}${2}"
+    exit 1
+}
+
+#### main
+
+# .bin
+if [ ! -e $HOME/.bin ]; then
+    msg "Create symboic link \"$HOME/.bin\" -> \"$BASE_PATH/bin\""
+    ln -s $BASE_PATH/bin $HOME/.bin
+fi
+
+# .tmux.conf
+if [ ! -e $HOME/.tmux.conf]; then
+    msg "Create symboic link \"$HOME/.tmux.conf\" -> \"$BASE_PATH/tmux.conf\""
+    ln -s $BASE_PATH/tmux.conf$HOME/.tmux.conf
+fi

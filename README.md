@@ -49,7 +49,7 @@ To update, `cd` into your local `dotfile` repository and then:
 
 ## Usage
 
-This is only a documentation page. You can find out more on [specification](SPEC.md).
+This is only a documentation page. You can find out more on [specification](docs/SPEC.md).
 
 ## Related Efforts
 
