@@ -18,14 +18,14 @@ alias zshconfig="vim $HOME/.zshrc"
 alias envconfig="vim $HOME/.bin/env.sh"
 
 # Pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    export PATH="~/.pyenv/bin:$PATH"
+if [ -e "$HOME/.pyenv" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
 # Jenv
-if command -v jenv 1>/dev/null 2>&1; then
+if [ -e "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
 fi
