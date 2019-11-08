@@ -21,13 +21,17 @@ error() {
 #### main
 
 # .bin
-if [ ! -e $HOME/.bin ]; then
+if [ -L $HOME/.bin ] && [ -e $HOME/.bin ]; then
+    msg "\"$HOME/.bin\" ready"
+else
     msg "Create symboic link \"$HOME/.bin\" -> \"$BASE_PATH/bin\""
     ln -s $BASE_PATH/bin $HOME/.bin
 fi
 
 # .tmux.conf
-if [ ! -e $HOME/.tmux.conf]; then
+if [ -L $HOME/.tmux.conf ] && [ -e $HOME/.tmux.conf ]; then
+    msg "\"$HOME/.tmux.conf\" ready"
+else
     msg "Create symboic link \"$HOME/.tmux.conf\" -> \"$BASE_PATH/tmux.conf\""
-    ln -s $BASE_PATH/tmux.conf$HOME/.tmux.conf
+    ln -s $BASE_PATH/tmux.conf $HOME/.tmux.conf
 fi
