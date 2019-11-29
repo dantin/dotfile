@@ -13,9 +13,12 @@ export PATH="$HOME/.bin/:$PATH"
 # gradle
 #alias gradle="JAVA_HOME=`/usr/libexec/java_home -v 1.8` gradle"
 
-# Use sublime-text for editing config files
+# Use vim for editing config files
 alias zshconfig="vim $HOME/.zshrc"
 alias envconfig="vim $HOME/.bin/env.sh"
+# let tmux support 256 colors
+alias tmux="tmux -2"
+
 
 # Pyenv
 if [ -e "$HOME/.pyenv" ]; then
