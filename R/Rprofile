@@ -1,0 +1,2 @@
+# customized CRAN source
+options(repos=structure(c(CRAN="https://mirrors.tuna.tsinghua.edu.cn/CRAN/")))
