@@ -19,6 +19,9 @@ alias envconfig="vim $HOME/.bin/env.sh"
 # let tmux support 256 colors
 alias tmux="tmux -2"
 
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 
 # Pyenv
 if [ -e "$HOME/.pyenv" ]; then
@@ -52,17 +55,38 @@ if [ -e "$HOME/.cargo/bin" ]; then
 fi
 
 # Golang
-if [ -e "/usr/local/Cellar/go" ]; then
-    export GOROOT=/usr/local/Cellar/go/1.12.6/libexec
-    export GOPATH=$HOME/Documents/code/golang
+if [ -e "/usr/local/go" ]; then
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/Documents/lang/go
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
+# perl5
+# By default non-brewed cpan modules are installed system-wide.
+# using `local:lib` to persist module across updates.
+#
+# set up using:
+#   PERL_MM_OPT="INSTALL_BASE=$HOME/Documents/lang/perl5" cpan local::lib
+#   echo 'eval "$(perl -I$HOME/Documents/lang/perl5/lib/perl5 -Mlocal::lib=$HOME/Documents/lang/perl5)"' >> ~/.zshrc
+if [ -e "$HOME/Documents/lang/perl5" ]; then
+    eval "$(perl -I$HOME/Documents/lang/perl5/lib/perl5 -Mlocal::lib=$HOME/Documents/lang/perl5)"
+fi
+
 # Proxy related functions
-function setproxy() {
+setproxy() {
   export {http,https,ftp}_proxy="http://3.20.128.5:88"
 }
 
-function unsetproxy() {
+unsetproxy() {
   unset {http,https,ftp}_proxy
+}
+
+setgoproxy() {
+    export GO111MODULE=on
+    export GOPROXY=https://goproxy.cn
+}
+
+unsetgoproxy() {
+    unset GO111MODULE
+    unset GOPROXY
 }
