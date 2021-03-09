@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ ! "$#" -eq 2 ] ; then
+	echo "usage: q-backup <src> <dest>"
+	exit 0
+fi
+
+sudo rsync --compress --recursive --delete --links \
+     --times --perms --owner --group \
+     --verbose --progress --stats \
+     --exclude "*bak" --exclude "*~" $1 $2
