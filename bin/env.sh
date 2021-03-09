@@ -19,6 +19,9 @@ alias envconfig="vim $HOME/.bin/env.sh"
 # let tmux support 256 colors
 alias tmux="tmux -2"
 
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 
 # Pyenv
 if [ -e "$HOME/.pyenv" ]; then
@@ -70,6 +73,17 @@ fi
 #    LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 #    export QTDIR PATH LD_LIBRARY_PATH
 #fi
+
+# perl5
+# By default non-brewed cpan modules are installed system-wide.
+# using `local:lib` to persist module across updates.
+#
+# set up using:
+#   PERL_MM_OPT="INSTALL_BASE=$HOME/Documents/lang/perl5" cpan local::lib
+#   echo 'eval "$(perl -I$HOME/Documents/lang/perl5/lib/perl5 -Mlocal::lib=$HOME/Documents/lang/perl5)"' >> ~/.zshrc
+if [ -e "$HOME/Documents/lang/perl5" ]; then
+    eval "$(perl -I$HOME/Documents/lang/perl5/lib/perl5 -Mlocal::lib=$HOME/Documents/lang/perl5)"
+fi
 
 # Proxy related functions
 setproxy() {
