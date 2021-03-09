@@ -39,7 +39,7 @@ sudo apt remove --purge libcurl4-gnutls-dev -y || true
 sudo apt-get autoremove -y
 sudo apt-get autoclean
 
-sudo apt install build-essential autoconf dh-autoconf -y
+sudo apt install build-essential autoconf dh-autoreconf -y
 sudo apt install libcurl4-openssl-dev tcl-dev gettext asciidoc -y
 sudo apt install libexpat1-dev zlib1g-dev -y
 
