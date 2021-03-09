@@ -39,8 +39,8 @@ fi
 # Nodejs
 if [ -e "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && source "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+    [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     #alias for cnpm
     #alias cnpm="npm --registry=https://registry.npm.taobao.org \
     #  --cache=$HOME/.npm/.cache/cnpm \
@@ -55,11 +55,24 @@ if [ -e "$HOME/.cargo/bin" ]; then
 fi
 
 # Golang
-if [ -e "/usr/local/go" ]; then
-    export GOROOT=/usr/local/go
+if [ -e "/opt/go" ]; then
+    export GOROOT=/opt/go
     export GOPATH=$HOME/Documents/lang/go
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
+
+# gRPC
+if [ -e "/opt/grpc" ]; then
+    export PATH=$PATH:/opt/grpc/bin
+fi
+
+# Qt
+#if [ -e "/opt/Qt/Tools/QtCreator" ]; then
+#    QTDIR=/opt/Qt/Tools/QtCreator
+#    PATH=$QTDIR/bin:$PATH
+#    LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+#    export QTDIR PATH LD_LIBRARY_PATH
+#fi
 
 # perl5
 # By default non-brewed cpan modules are installed system-wide.
@@ -81,12 +94,13 @@ unsetproxy() {
   unset {http,https,ftp}_proxy
 }
 
+# GOProxy related functions
 setgoproxy() {
-    export GO111MODULE=on
-    export GOPROXY=https://goproxy.cn
+  export GO111MODULE=on
+  export GOPROXY=https://goproxy.cn
 }
 
 unsetgoproxy() {
-    unset GO111MODULE
-    unset GOPROXY
+  unset GO111MODULE
+  unset GOPROXY
 }
